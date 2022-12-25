@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+margin_left = 270.122
+margin_top = 274.45
+margin_right = 759.122
+margin_bottom = 331.45
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "GAME OVER"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FavNum" type="Label" parent="."]
+margin_left = 705.786
+margin_top = 46.0
+margin_right = 965.786
+margin_bottom = 93.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "FAV: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressSpace" type="Label" parent="."]
+visible = false
+margin_left = 315.412
+margin_top = 480.414
+margin_right = 711.412
+margin_bottom = 555.414
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PRESS SPACE
+TO RESTART"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlinkTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_BlinkTimer_timeout"]
